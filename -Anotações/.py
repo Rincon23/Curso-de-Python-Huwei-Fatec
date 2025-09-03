@@ -73,3 +73,33 @@ print(s2)
 
 Valores A é 14 e B é 32
 Valores A é 14 e B é 32
+
+#Operadores lógicos
+
+#Em ordem da algebra booleana
+
+not
+and
+or
+
+a = 0
+
+if not a > 0:
+    print('True')
+else:
+    print('False')
+
+
+if True or False and False:
+    print('True')
+else:
+    print('False')
+
+True
+
+if (True or False) and False:
+    print('True')
+else:
+    print('False')
+
+False
