@@ -40,3 +40,36 @@ print(id(L))
 44
 2106021666816
 
+#Incrementando
+
+a = 10
+a += 1
+a *=2
+a //= 2
+print(a)
+
+11
+
+#print
+
+x = 1
+y = 2
+print('numero x = {1} e y = {0}'.format(y, x))
+print(x,y,sep=' <--> ')
+print('Olá\ntabulação\tseria isso')
+
+numero x = 1 e y = 2
+1 <--> 2
+Olá
+tabulação       seria isso
+
+
+a = 14
+b = 32
+s1 = 'Valores A é {} e B é {}'.format(a,b)
+s2 = f'Valores A é {a} e B é {b}'
+print(s1)
+print(s2)
+
+Valores A é 14 e B é 32
+Valores A é 14 e B é 32
