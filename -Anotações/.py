@@ -128,3 +128,29 @@ while x > 0 :
     print(f'O X está valendo {x}')
 else:
     print('O usuario digitou um numero negativo')
+
+#try except
+
+a = int(input('Digite A: '))
+b = int(input('Digite B: '))
+
+try:
+    r = a/b
+    print(r)
+except:
+    print('Não é possivel calcular a divisão!')
+
+
+
+try:
+    a = int(input('Digite A: '))
+    b = int(input('Digite B: '))
+    r = a/b
+    print(r)
+    
+except ZeroDivisionError:
+    print('Não é possivel calcular a divisão por zero!')
+except ValueError:
+    print('Só pode ser digitado numeros inteiros para a e b!')
+except:
+    print('Não é possivel calcular a divisão!')
