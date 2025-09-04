@@ -103,3 +103,28 @@ else:
     print('False')
 
 False
+
+#Continue
+
+i = 0
+
+while i < 5:
+    i= i + 1
+    if i == 4:
+        continue
+    print(i, end='  ')
+
+1  2  3  5
+
+#while else
+
+x = 1
+
+while x > 0 :
+    x = int(input('Digite o valor: '))
+    if x == 0:
+        print('Você digitou 0')
+        break
+    print(f'O X está valendo {x}')
+else:
+    print('O usuario digitou um numero negativo')
