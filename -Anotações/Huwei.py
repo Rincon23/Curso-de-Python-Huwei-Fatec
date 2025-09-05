@@ -154,3 +154,177 @@ except ValueError:
     print('Só pode ser digitado numeros inteiros para a e b!')
 except:
     print('Não é possivel calcular a divisão!')
+
+#Lista
+
+l = [36, 25, 21, 48, 17, 9, 16, 23, 29, 31]
+i=0
+while i < len(l):
+    print(l[i], end=' ')
+    i += 1
+
+36 25 21 48 17 9 16 23 29 31
+
+l = [36, 25, 21, 48, 17, 9, 16, 23, 29, 31]
+print(l[-1],l[-2])
+
+31 29
+
+#Fatiamento
+
+l = [36, 25, 21, 48, 17, 9, 16, 23, 29, 31]
+origem = l
+destino = origem[3:6]
+destino2 = origem[1:7:2]
+destino3 = origem[:4]
+destino4 = origem[6:]
+
+print(destino)
+print(destino2)
+print(destino3)
+print(destino4)
+
+[48, 17, 9]
+[25, 48, 9]
+[36, 25, 21, 48]
+[16, 23, 29, 31]
+
+#append
+
+l = []
+l.append(81)
+l.append(17)
+l.append(49)
+l.append(53)
+print(l)
+
+[81, 17, 49, 53]
+
+#clear
+l = [81,17,49,53]
+l.clear()
+print(l)
+
+[]
+
+#copy
+
+l = [81,17,49,53]
+a = l
+b = l.copy()
+
+print(id(l))
+print(id(a))
+print(id(b))
+
+2637383640256
+2637383640256
+2637383491584
+
+#Count
+
+l = [81,17,49,53]
+print(l.count(81))
+
+1
+
+#extend
+
+l = [81,17,49,53]
+l2 = [1,2,3,4]
+
+l.extend(l2)
+print(l)
+
+[81, 17, 49, 53, 1, 2, 3, 4]
+
+#index e in 
+
+l = [81,17,49,53]
+print(l.index(17))
+"""print(l.index(300)) ValueError: 300 is not in list"""
+print(300 in l)
+print(81 in l)
+
+1
+False
+True
+
+l = [81,17,49,53,17]
+print(l.index(17))
+print(l.index(17,2))
+print(l.index(17,l.index(17)+1))
+
+1
+4
+4
+
+#insert
+l = [81,17,49,53]
+l.insert(1, 195)
+l.insert(30,100)
+print(l)
+
+[81, 195, 17, 49, 53, 100]
+
+#pop
+l = [81,17,49,53]
+a = l.pop(0)
+print(l)
+print(a)
+[17, 49, 53]
+81
+
+#del e remove
+l = [81,17,49,53]
+del l[0]
+l.remove(53)
+"""l.remove(300) ValueError: 300 is not in list"""
+print(l)
+
+[17, 49]
+
+#reverse
+l = [2,81,195,17,49,81,1,2,3,4,35]
+l.reverse()
+print(l)
+
+[35, 4, 3, 2, 1, 81, 49, 17, 195, 81, 2]
+
+#sort
+l = [2,81,195,17,49,81,1,2,3,4,35]
+l.sort()
+print(l)
+
+[1, 2, 2, 3, 4, 17, 35, 49, 81, 81, 195]
+
+
+l = [2,81,195,17,49,81,1,2,3,4,35]
+l.sort(reverse=True)
+print(l)
+
+[195, 81, 81, 49, 35, 17, 4, 3, 2, 2, 1]
+
+
+#For em listas
+l = [81,17,49,53]
+
+for i in l:
+    print(i)
+
+81
+17
+49
+53
+
+
+l = [81,17,49,53]
+pos = 0
+for i in l:
+    print(f'A posição {pos} contém {i}')
+    pos +=1
+
+A posição 0 contém 81
+A posição 1 contém 17
+A posição 2 contém 49
+A posição 3 contém 53
