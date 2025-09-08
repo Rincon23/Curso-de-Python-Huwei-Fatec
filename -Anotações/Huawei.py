@@ -328,3 +328,42 @@ A posição 0 contém 81
 A posição 1 contém 17
 A posição 2 contém 49
 A posição 3 contém 53
+
+
+#match case
+
+while True:
+    n = int(input('Digite um numero inteiro ou -1 para parar: '))
+    match n:
+        case 1:
+            print('Você digitou 1')
+        case 2:
+            print('Você digitou 2')
+        case -1:
+            break
+        case _:
+            print('Você digitou outra coisa!')
+
+
+#if inline
+x = 10
+y = 9
+print(x) if x>=y else print(y)
+
+10
+
+#if inline sem o else
+cod = [103,117,121,135,161,189,200,204,216]
+l = []
+for valor in cod:
+    #if valor >=120 and valor <= 200:
+    #    l.append(valor)
+    l.append(valor) if valor >=120 and valor <= 200 else 0
+print(l)
+
+[121, 135, 161, 189, 200]
+
+#if inline com retorno de valor
+x = int(input('Digite um inteiro: '))
+parimpar = 'par' if x % 2 == 0 else 'ímpar'
+print(f'O valor {x} é {parimpar}')
