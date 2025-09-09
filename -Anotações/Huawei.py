@@ -367,3 +367,250 @@ print(l)
 x = int(input('Digite um inteiro: '))
 parimpar = 'par' if x % 2 == 0 else 'ímpar'
 print(f'O valor {x} é {parimpar}')
+
+#Conjunto set
+
+#Formas de criar
+
+c = set()
+c1 = {4,5,6,2}
+c2 = set([4,5,6,2])
+c3 = set((4,5,6,2))
+"""c4 = set(4,9,14,21)""" # Dará erro!
+"""c5 = {}""" #Resultara na classe Dict e não set!
+
+
+c1 = {16,8,21,30,41,28}
+print(c1)
+{16, 21, 8, 41, 28, 30}
+
+c1 = {16,8,21,30,41,28,8}
+print(c1)
+{16, 21, 8, 41, 28, 30}
+
+c1 = {16,8,21,30,41,28,'8'}
+print(c1)
+{16, '8', 21, 8, 41, 28, 30}
+
+c1 = {16,8,21,30,41,28,8.00}
+print(c1)
+{16, 21, 8, 41, 28, 30}
+
+c1 = {16,8,21,30,41,28,8.00001}
+print(c1)
+{16, 21, 8.00001, 8, 41, 28, 30}
+
+texto = 'qualquer texto'
+c1 = set(texto) 
+print(c1)
+{'r', 'o', 'e', ' ', 'u', 't', 'a', 'l', 'q', 'x'}
+
+tupla = (26,73,41,26)
+c2 = set(tupla)
+print(c2)
+{73, 26, 41}
+
+lista = [26,73,41,26,41]
+c3 = set(lista)
+print(c3)
+{73, 26, 41}
+
+#hash
+
+v1 = 'Olá'
+v2 = 'Olá'
+print(hash(v1))
+print(hash(v2))
+
+-6753406829026499667
+-6753406829026499667
+
+v1 = {207,37.3, (9,10,11),'abcd'}
+print(v1)
+{'abcd', (9, 10, 11), 37.3, 207}
+
+print(hash(207))
+207
+
+print(hash(207.093))
+214443399856849103
+
+print(hash((207,10,11)))
+1370363275065463132
+
+#Listas não possuem hash pois são mutaveis!
+"""print(hash([207,1234]))"""
+"""v1 = {207,37.3, (9,10,11),[5,10,15],'abcd'}""" 
+#Listas não possuem hash pois são mutaveis!
+
+
+# Métodos set
+
+#add e clear
+
+c = set()
+c.add(85)
+c.add(190)
+c.add(260)
+c.add(89)
+c.add('olá')
+print(c)
+c.clear()
+print(c)
+
+{260, 'olá', 85, 89, 190}
+set()
+
+#id
+c = set()
+c2 = c.copy()
+print(id(c))
+print(id(c2))
+
+1769186092064
+1769185805024
+
+
+c = set()
+c2 = c
+print(id(c))
+print(id(c2))
+
+1769186091616
+1769186091616
+
+#difference -
+c1 = {26,32,45,58,63}
+c2 = {19,34,58,67,82}
+c3 = c1.difference(c2)
+print(c3)
+
+{32, 26, 45, 63}
+
+c1 = {26,32,45,58,63}
+c2 = {19,34,58,67,82}
+c1.difference_update(c2)
+print(c1)
+{32, 26, 45, 63}
+
+
+#discart
+c1 = {26,32,45,58,63}
+c1.discard(58)
+print(c1)
+{32, 58, 26, 45}
+
+
+#intersection &
+c1 = {26,32,45,58,63}
+c2 = {19,34,58,67,82}
+c3 = c1.intersection(c2)
+print(c3)
+{58}
+
+c1 = {26,32,45,58,63}
+c2 = {19,34,58,67,82}
+c1.intersection_update(c2)
+print(c1)
+{58}
+
+
+#isdisjoint
+c1 = {34,17,50,82,88}
+c2 = {34,67,82,19,63}
+print(c1.isdisjoint(c2))
+
+False
+
+c1.discard(34)
+c1.discard(82)
+print(c1.isdisjoint(c2))
+
+True
+
+
+#issubset e issuperset
+c1 = {34,17,50,82,88}
+c2 = {34,67,82,19,63}
+print(c1.issubset(c2))
+
+False
+
+c1 = {34,82}
+c2 = {34,67,82,19,63}
+print(c1.issubset(c2))
+
+
+True
+
+c1 = {34,82}
+c2 = {34,67,82,19,63}
+print(c2.issuperset(c1))
+
+True
+
+
+#pop
+c1 = {34,17,50,82,88}
+v = c1.pop()
+print(v) #Remove algum valor
+print(c1)
+
+17 
+{34, 50, 82, 88}
+
+
+#remove
+c1 = {34,17,50,82,88}
+c1.remove(50)
+"""c1.remove(999)""" #Erro
+print(c1)
+
+{17, 34, 82, 88}
+
+#in
+c1 = {34,17,50,82,88}
+print(50 in c1)
+print(999 in c1)
+
+True
+False
+
+#union |
+c1 = {34,17,50,82,88}
+c2 = {34,67,82,19,63}
+u = c1.union(c2)
+print(u)
+
+{34, 67, 17, 50, 82, 19, 88, 63}
+
+c1 = {34,17,50,82,88}
+c2 = {34,67,82,19,63}
+c1.update(c2)
+print(c1)
+
+{34, 67, 17, 50, 82, 19, 88, 63}
+
+#symmetric_difference ^
+c1 = {34,17,50,82,88}
+c2 = {34,67,82,19,63}
+s = c1.symmetric_difference(c2)
+print(s)
+
+{17, 50, 67, 19, 88, 63}
+
+
+c1 = {34,17,50,82,88}
+c2 = {34,67,82,19,63}
+c1.symmetric_difference_update(c2)
+print(c1)
+
+{17, 50, 67, 19, 88, 63}
+
+#frozenset #Versão imutavel do consjunto set
+
+c = frozenset()
+print(type(c))
+
+<class 'set'>
+
