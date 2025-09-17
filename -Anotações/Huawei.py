@@ -607,10 +607,256 @@ print(c1)
 
 {17, 50, 67, 19, 88, 63}
 
-#frozenset #Versão imutavel do consjunto set
+#frozenset #Versão imutavel do conjunto set
 
 c = frozenset()
 print(type(c))
 
 <class 'set'>
 
+
+#Dicionários
+uf = {'SP':'São Paulo', 'RJ' : 'Rio de Janeiro', 'MG':'Minas Gerais'}
+print(type(uf))
+print(uf)
+
+<class 'dict'>
+{'SP': 'São Paulo', 'RJ': 'Rio de Janeiro', 'MG': 'Minas Gerais'}
+
+
+uf = {}
+uf['SP'] = 'São Paulo'
+uf['RJ'] = 'Rio de Janeiro'
+uf['MG'] = 'Minas Gerais'
+print(uf)
+
+{'SP': 'São Paulo', 'RJ': 'Rio de Janeiro', 'MG': 'Minas Gerais'}
+
+
+d = {}
+d['a'] = 120
+d['a'] = 250
+print(d)
+
+{'a': 250}
+
+
+d['a'] = 250
+d['b'] = 521
+print(d)
+
+{'a': 250, 'b': 521}
+
+
+d['a'] = 250
+d['b'] = 521
+v = d['a'] + d['b']
+print(v)
+
+771
+
+
+d['a'] += 100
+print(d)
+350
+
+
+d['a'] = 250
+chave = 'a'
+print(d[chave])
+
+250
+
+m = {}
+m[110] = 45.6
+m[4.2] = 'xpt'
+m[(1,0,5)] = 28
+print(m)
+
+{110: 45.6, 4.2: 'xpt', (1, 0, 5): 28}
+
+#Métodos dos dicionários
+
+len()
+
+d.clear()
+
+d2 = d.copy()
+
+v = d.pop(x)
+
+#get
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+print(d.get(120))
+print(d[134])
+
+Queijo
+Arroz
+
+#fromkeys
+d = {}
+codigos = (111,139,143,157)
+d = d.fromkeys(codigos,'algo')
+print(d)
+
+{111: 'algo', 139: 'algo', 143: 'algo', 157: 'algo'}
+
+codigos = (111,139,143,157)
+d = {}.fromkeys(codigos,'algo')
+print(d)
+
+{111: 'algo', 139: 'algo', 143: 'algo', 157: 'algo'}
+
+
+#popitem
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+v = d.popitem() #Retira sempre o ultimo
+print(v)
+
+(133, 'Macarrão')
+
+
+#setdefault
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+d2 = d.setdefault(144,'Feijão')
+print(d)
+print(d2)
+
+{120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão', 144: 'Feijão'}
+Feijão
+
+
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+d2 = d.setdefault(120, 'Berinjela')
+
+print(d)
+print(d2)
+
+{120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+Queijo
+
+
+#update
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+d.update(((117, 'Cebola'), (217, 'Maçã'), (120, 'Tomate')))
+print(d)
+
+{120: 'Tomate', 134: 'Arroz', 117: 'Cebola', 125: 'Açucar', 133: 'Macarrão', 217: 'Maçã'}
+
+
+#keys
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+chaves = d.keys()
+print(type(chaves))
+print(chaves)
+
+<class 'dict_keys'>
+dict_keys([120, 134, 117, 125, 133])
+
+
+for valor in d.keys():
+    print(valor)
+
+120
+134
+117
+125
+133
+
+
+#values
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+valores = d.values()
+print(type(valores))
+print(valores)
+
+<class 'dict_values'>
+dict_values(['Queijo', 'Arroz', 'Farinha', 'Açucar', 'Macarrão'])
+
+
+for valor in d.values():
+    print(valor)
+
+Queijo
+Arroz
+Farinha
+Açucar
+Macarrão
+
+
+#items
+d = {120: 'Queijo', 134: 'Arroz', 117: 'Farinha', 125: 'Açucar', 133: 'Macarrão'}
+itens = d.items()
+print(type(itens))
+print(itens)
+
+<class 'dict_items'>
+dict_items([(120, 'Queijo'), (134, 'Arroz'), (117, 'Farinha'), (125, 'Açucar'), (133, 'Macarrão')])
+
+
+for valor in d.items():
+    print(valor)
+
+(120, 'Queijo')
+(134, 'Arroz')
+(117, 'Farinha')
+(125, 'Açucar')
+(133, 'Macarrão')
+
+
+#for em dicionários
+
+#keys
+cores = {1: 'Azul', 2: 'Verde', 3: 'Amarelo', 5:'Vermelho'}
+for valor in cores.keys():
+    print(f'{valor} - {cores[valor]}')
+
+1 - Azul
+2 - Verde
+3 - Amarelo
+5 - Vermelho
+
+
+cores = {1: 'Azul', 2: 'Verde', 3: 'Amarelo', 5:'Vermelho'}
+for valor in cores:
+    print(f'{valor} - {cores[valor]}')
+
+1 - Azul
+2 - Verde
+3 - Amarelo
+5 - Vermelho
+
+
+#values
+cores = {1: 'Azul', 2: 'Verde', 3: 'Amarelo', 5:'Vermelho'}
+
+for valor in cores.values():
+    print(f'{valor}')
+
+Azul
+Verde
+Amarelo
+Vermelho
+
+
+#items
+cores = {1: 'Azul', 2: 'Verde', 3: 'Amarelo', 5:'Vermelho'}
+
+for valor in cores.items():
+    print(f'{valor[0]} - {valor[1]}')
+
+1 - Azul
+2 - Verde
+3 - Amarelo
+5 - Vermelho
+
+
+cores = {1: 'Azul', 2: 'Verde', 3: 'Amarelo', 5:'Vermelho'}
+
+for num, cor in cores.items():
+    print(f'{num} - {cor}')
+    
+1 - Azul
+2 - Verde
+3 - Amarelo
+5 - Vermelho
